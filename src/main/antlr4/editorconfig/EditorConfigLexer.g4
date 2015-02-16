@@ -127,7 +127,11 @@ TEXT
 // e.g. [*.py]
 mode SECTION_INNER_MODE;
 SECTION_NAME
-    : ~[\[\]\n#]+ -> popMode
+    : ~[\[\]\r\n#]+ -> popMode
+    ;
+
+SECTION_EXIT
+    : [\r\n] -> type(WS), channel(HIDDEN), popMode
     ;
 
 mode PROPERTY_VALUE_MODE;
