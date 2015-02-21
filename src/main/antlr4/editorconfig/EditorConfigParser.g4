@@ -25,7 +25,7 @@ parser grammar EditorConfigParser;
 options { tokenVocab=EditorConfigLexer; }
 
 file
-    : (rootPropertyStatement section*)? EOF
+    : (rootPropertyStatement? section*)? EOF
     ;
 
 section
