@@ -127,7 +127,7 @@ TEXT
 // e.g. [*.py]
 mode SECTION_INNER_MODE;
 SECTION_NAME
-    : ~[\[\]\r\n#]+ -> popMode
+    : (~[\[\]\r\n#] | '[' .*? ']')+ -> popMode
     ;
 
 SECTION_EXIT
