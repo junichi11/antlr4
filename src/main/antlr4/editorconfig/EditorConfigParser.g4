@@ -29,7 +29,7 @@ file
     ;
 
 section
-    : sectionHeader propertyStatement+
+    : sectionHeader propertyStatement*
     ;
 
 sectionHeader
